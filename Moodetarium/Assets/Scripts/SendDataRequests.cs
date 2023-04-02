@@ -7,11 +7,13 @@ using TMPro;
 public class SendDataRequests : MonoBehaviour
 {
     // reference to text component
-    public TMP_Text textComponent;
+    // public TMP_Text textComponent;
+
+    private Dictionary<string, float> moodDict;
 
     void Start()
     {
-        textComponent.text = "";
+        // textComponent.text = "";
         InvokeRepeating("getData", 1.0f, 30.0f);
     }
 
@@ -36,9 +38,8 @@ public class SendDataRequests : MonoBehaviour
         } 
         else 
         {
-            string jsonResponseContents = dataReq.downloadHandler.text;
-            Debug.Log(jsonResponseContents);
-            textComponent.text = jsonResponseContents;
+            // textComponent.text = jsonResponseContents;
+            moodDict =  DataHandler.parseResponse(dataReq.downloadHandler.text);
         }
     }
 }
