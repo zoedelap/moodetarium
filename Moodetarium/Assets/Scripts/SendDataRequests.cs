@@ -16,7 +16,7 @@ public class SendDataRequests : MonoBehaviour
     {
         planetManager = GameObject.Find("Planets").GetComponent<PlanetManager>();
         // textComponent.text = "";
-        InvokeRepeating("getData", 1.0f, 30.0f);
+        InvokeRepeating("getData", 0, 30.0f);
     }
 
     void getData() 
