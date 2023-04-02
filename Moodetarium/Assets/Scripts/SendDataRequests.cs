@@ -38,7 +38,7 @@ public class SendDataRequests : MonoBehaviour
         {
             // textComponent.text = jsonResponseContents;
             moodDict =  DataHandler.parseResponse(dataReq.downloadHandler.text);
-            planetManager.setPlanetColors();
+            planetManager.setPlanetColors(moodDict);
         }
     }
 }
