@@ -20,8 +20,12 @@ public class PlanetManager : MonoBehaviour
     public void setPlanetColors(Dictionary<string, float> moods) {
         foreach (KeyValuePair<string, PlanetAppearanceController> kvp in planetControllers)
         {
-            Color mappedColor = convertColor(moods[kvp.Key]);
-            kvp.Value.setColor(mappedColor);
+            try {
+                Color mappedColor = convertColor(moods[kvp.Key]);
+                kvp.Value.setColor(mappedColor);
+            } catch (KeyNotFoundException e) {
+                kvp.Value.setColor(Color.gray);
+            }
         }
     }
 
