@@ -6,9 +6,6 @@ using TMPro;
 
 public class SendDataRequests : MonoBehaviour
 {
-    // int frameCounter = 0;
-    // readonly int COUNT = 1000;
-
     // reference to text component
     public TMP_Text textComponent;
 
@@ -18,14 +15,8 @@ public class SendDataRequests : MonoBehaviour
         InvokeRepeating("getData", 1.0f, 30.0f);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // frameCounter++;
-        // if (frameCounter == COUNT) {  
-        //     StartCoroutine(GetSheetData());
-        //     frameCounter = 0;
-        // }
     }
 
     void getData() 
