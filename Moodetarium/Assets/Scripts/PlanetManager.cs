@@ -29,7 +29,8 @@ public class PlanetManager : MonoBehaviour
         int totalSubmissions = countTotalSubmissions(counts);
         foreach (KeyValuePair<string, PlanetAppearanceController> kvp in planetControllers)
         {
-            // set size
+            float scaleValue = counts[kvp.Key] / totalSubmissions;
+            kvp.Value.setSize(scaleValue);
         }
     }
 
