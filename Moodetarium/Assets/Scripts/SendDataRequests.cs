@@ -12,7 +12,7 @@ public class SendDataRequests : MonoBehaviour
     private Dictionary<string, float> moodDict;
     private PlanetManager planetManager;
 
-    void Start()
+    void Awake()
     {
         planetManager = GameObject.Find("Planets").GetComponent<PlanetManager>();
         // textComponent.text = "";
@@ -27,7 +27,6 @@ public class SendDataRequests : MonoBehaviour
 
     IEnumerator GetAverageMoods()
     {
-        Debug.Log("retriving average moods");
         UnityWebRequest dataReq = UnityWebRequest.Get("https://ineffablezoe.wixsite.com/moodetarium/_functions/averageMoods");
         yield return dataReq.SendWebRequest();
         if (dataReq.result == UnityWebRequest.Result.ConnectionError || dataReq.result == UnityWebRequest.Result.ProtocolError) 
