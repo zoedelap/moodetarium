@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 358370642}
   - component: {fileID: 358370644}
   - component: {fileID: 358370643}
+  - component: {fileID: 358370645}
   m_Layer: 0
   m_Name: Business
   m_TagString: Untagged
@@ -153,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358370637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3, y: 0, z: 3.03}
+  m_LocalPosition: {x: 0.02, y: 0, z: 8.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -261,6 +262,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &358370645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358370637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9cdeabe95970b4d996d5e4f2d15f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degreesPerSecond: 7
 --- !u!1 &422218013
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,8 +540,9 @@ GameObject:
   - component: {fileID: 602660235}
   - component: {fileID: 602660238}
   - component: {fileID: 602660239}
+  - component: {fileID: 602660240}
   m_Layer: 0
-  m_Name: Health
+  m_Name: Health Sciences
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -541,7 +556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602660233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.97, y: 0, z: 7.27}
+  m_LocalPosition: {x: 3.36, y: 0, z: 6.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -636,6 +651,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &602660240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602660233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9cdeabe95970b4d996d5e4f2d15f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degreesPerSecond: 6
 --- !u!1 &656880745
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +873,7 @@ GameObject:
   - component: {fileID: 916848242}
   - component: {fileID: 916848245}
   - component: {fileID: 916848246}
+  - component: {fileID: 916848247}
   m_Layer: 0
   m_Name: Engineering and Natural Sciences
   m_TagString: Untagged
@@ -860,7 +889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916848240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: 7.98}
+  m_LocalPosition: {x: -4.42, y: 0, z: 6.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -955,6 +984,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &916848247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916848240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9cdeabe95970b4d996d5e4f2d15f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degreesPerSecond: 5
 --- !u!1 &935566964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1079,7 @@ GameObject:
   - component: {fileID: 936991802}
   - component: {fileID: 936991805}
   - component: {fileID: 936991806}
+  - component: {fileID: 936991807}
   m_Layer: 0
   m_Name: Law
   m_TagString: Untagged
@@ -1052,7 +1095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936991800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.02, y: 0, z: 5.09}
+  m_LocalPosition: {x: 5.77, y: 0, z: 6.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1147,6 +1190,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &936991807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936991800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9cdeabe95970b4d996d5e4f2d15f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degreesPerSecond: 5
 --- !u!1 &1285774691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1217,7 @@ GameObject:
   - component: {fileID: 1285774693}
   - component: {fileID: 1285774696}
   - component: {fileID: 1285774697}
+  - component: {fileID: 1285774698}
   m_Layer: 0
   m_Name: Arts and Sciences
   m_TagString: Untagged
@@ -1176,7 +1233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285774691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.14, y: 0, z: 1.58}
+  m_LocalPosition: {x: -4.94, y: 0, z: 2.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1271,6 +1328,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &1285774698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285774691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9cdeabe95970b4d996d5e4f2d15f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degreesPerSecond: 2
 --- !u!1 &1354141925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,8 +1618,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683989877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 7}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 424532646}
@@ -1567,4 +1637,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472650e500c9594daa09c32b9556788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
