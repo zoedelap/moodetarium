@@ -5,11 +5,10 @@ using UnityEngine;
 public class PlanetAppearanceController : MonoBehaviour
 {
     private Renderer planetRenderer;
-    private float originalScale;
+    private float originalScale = 2.0f;
 
     void Start() {
         planetRenderer = GetComponent<Renderer>();
-        originalScale = gameObject.transform.localScale.x;
     }
 
     public void setColor(Color color) {
