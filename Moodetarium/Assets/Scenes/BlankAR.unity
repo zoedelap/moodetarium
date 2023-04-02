@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2490939345f0ccd4ebbd14339723c03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &358370643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424532646}
+  - component: {fileID: 424532647}
   m_Layer: 0
   m_Name: Planets
   m_TagString: Untagged
@@ -392,6 +394,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &424532647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424532645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08abaefc368b814ab412ff87ac557e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planets:
+  - {fileID: 916848240}
+  - {fileID: 936991800}
+  - {fileID: 358370637}
+  - {fileID: 1285774691}
+  - {fileID: 602660233}
 --- !u!1 &567951459
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,6 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2490939345f0ccd4ebbd14339723c03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &602660239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,6 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2490939345f0ccd4ebbd14339723c03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &916848246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,6 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2490939345f0ccd4ebbd14339723c03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &936991806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,6 +1262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2490939345f0ccd4ebbd14339723c03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1285774697
 MonoBehaviour:
   m_ObjectHideFlags: 0

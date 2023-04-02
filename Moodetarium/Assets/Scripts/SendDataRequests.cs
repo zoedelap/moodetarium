@@ -10,15 +10,13 @@ public class SendDataRequests : MonoBehaviour
     // public TMP_Text textComponent;
 
     private Dictionary<string, float> moodDict;
+    private PlanetManager planetManager;
 
     void Start()
     {
+        planetManager = GameObject.Find("Planets").GetComponent<PlanetManager>();
         // textComponent.text = "";
         InvokeRepeating("getData", 1.0f, 30.0f);
-    }
-
-    void Update()
-    {
     }
 
     void getData() 
@@ -40,6 +38,7 @@ public class SendDataRequests : MonoBehaviour
         {
             // textComponent.text = jsonResponseContents;
             moodDict =  DataHandler.parseResponse(dataReq.downloadHandler.text);
+            planetManager.setPlanetColors();
         }
     }
 }
