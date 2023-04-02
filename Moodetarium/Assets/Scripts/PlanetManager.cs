@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlanetManager : MonoBehaviour
@@ -15,12 +16,25 @@ public class PlanetManager : MonoBehaviour
             planetControllers.Add(planet.name, controller);
         }
     }
+
     public void setPlanetColors(Dictionary<string, float> moods) {
         foreach (KeyValuePair<string, PlanetAppearanceController> kvp in planetControllers)
         {
             Color mappedColor = convertColor(moods[kvp.Key]);
             kvp.Value.setColor(mappedColor);
         }
+    }
+
+    public void setPlanetSizes(Dictionary<string, float> counts) {
+        int totalSubmissions = countTotalSubmissions(counts);
+        foreach (KeyValuePair<string, PlanetAppearanceController> kvp in planetControllers)
+        {
+            // set size
+        }
+    }
+
+    int countTotalSubmissions(Dictionary<string, float> counts) {
+        return counts.Sum(x => (int) x.Value);
     }
 
     Color convertColor(float num) {

@@ -8,9 +8,9 @@ public class SendDataRequests : MonoBehaviour
 {
     // reference to text component
     // public TMP_Text textComponent;
-
-    private Dictionary<string, float> moodDict;
     private PlanetManager planetManager;
+    private Dictionary<string, float> moodDict;
+    private Dictionary<string, float> countDict;    
 
     void Awake()
     {
@@ -23,6 +23,7 @@ public class SendDataRequests : MonoBehaviour
     {
         Debug.Log("retrieving data");
         StartCoroutine(GetAverageMoods());
+        StartCoroutine(GetSubmissionCounts());
     }
 
     IEnumerator GetAverageMoods()
@@ -38,6 +39,22 @@ public class SendDataRequests : MonoBehaviour
             // textComponent.text = jsonResponseContents;
             moodDict =  DataHandler.parseResponse(dataReq.downloadHandler.text);
             planetManager.setPlanetColors(moodDict);
+        }
+    }
+
+    IEnumerator GetSubmissionCounts()
+    {
+        UnityWebRequest dataReq = UnityWebRequest.Get("https://ineffablezoe.wixsite.com/moodetarium/_functions/countSubmissionsByCollege");
+        yield return dataReq.SendWebRequest();
+        if (dataReq.result == UnityWebRequest.Result.ConnectionError || dataReq.result == UnityWebRequest.Result.ProtocolError) 
+        {
+            Debug.Log("ERROR: " + dataReq.error);
+        } 
+        else 
+        {
+            // textComponent.text = jsonResponseContents;
+            countDict =  DataHandler.parseResponse(dataReq.downloadHandler.text);
+            planetManager.setPlanetSizes(countDict);
         }
     }
 }
