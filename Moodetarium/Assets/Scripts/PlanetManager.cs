@@ -6,17 +6,7 @@ using UnityEngine;
 public class PlanetManager : MonoBehaviour
 {
     public GameObject planetPrefab;
-    // public GameObject[] planets;
     private Dictionary<string, PlanetAppearanceController> planetControllers = new Dictionary<string, PlanetAppearanceController>();
-
-    void Start() {
-        // planetControllers = new Dictionary<string, PlanetAppearanceController>();
-        // foreach (GameObject planet in planets)
-        // {
-        //     PlanetAppearanceController controller = planet.GetComponent<PlanetAppearanceController>();
-        //     planetControllers.Add(planet.name, controller);
-        // }
-    }
 
     public void createPlanets(List<string> names) {
         float i = 3.0f;
@@ -25,11 +15,15 @@ public class PlanetManager : MonoBehaviour
             // create a child element of the gameobject the script is attached to and get the needed references
             GameObject newPlanet = Instantiate(planetPrefab) as GameObject;
             newPlanet.transform.parent = gameObject.transform;
-            newPlanet.transform.position = new Vector3(i, 0, i);
+
+            // move the planet to a random point in the orbit around the sun at its set distance
+            float angle = Random.Range(0f,360f) * Mathf.Deg2Rad;
+            newPlanet.transform.position = new Vector3( Mathf.Cos(angle) * i , 0, Mathf.Sin(angle) * i );
+            i++;
+            
+            // add new planet to the dictionary to modify its look later
             PlanetAppearanceController newObjController = newPlanet.GetComponent<PlanetAppearanceController>();
             planetControllers.Add(name, newObjController);
-
-            i++;
         }
         Debug.Log("Created planets: " + string.Join(",", names));
     }
