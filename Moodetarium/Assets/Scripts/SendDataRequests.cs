@@ -6,8 +6,6 @@ using TMPro;
 
 public class SendDataRequests : MonoBehaviour
 {
-    // reference to text component
-    // public TMP_Text textComponent;
     private PlanetManager planetManager;
     private Dictionary<string, float> moodDict;
     private Dictionary<string, float> countDict;    
@@ -15,7 +13,6 @@ public class SendDataRequests : MonoBehaviour
     void Awake()
     {
         planetManager = GameObject.Find("Planets").GetComponent<PlanetManager>();
-        // textComponent.text = "";
         InvokeRepeating("getData", 0, 30.0f);
     }
 
@@ -36,7 +33,6 @@ public class SendDataRequests : MonoBehaviour
         } 
         else 
         {
-            // textComponent.text = jsonResponseContents;
             moodDict =  DataHandler.parseResponse(dataReq.downloadHandler.text);
             planetManager.setPlanetColors(moodDict);
         }
@@ -52,7 +48,6 @@ public class SendDataRequests : MonoBehaviour
         } 
         else 
         {
-            // textComponent.text = jsonResponseContents;
             countDict =  DataHandler.parseResponse(dataReq.downloadHandler.text);
             planetManager.setPlanetSizes(countDict);
         }
