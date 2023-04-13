@@ -17,6 +17,10 @@ public class PlanetManager : MonoBehaviour
         }
     }
 
+    public void createPlanets(List<string> names) {
+        Debug.Log("would create planets: " + string.Join(",", names));
+    }
+
     public void setPlanetColors(Dictionary<string, float> moods) {
         foreach (KeyValuePair<string, PlanetAppearanceController> kvp in planetControllers)
         {

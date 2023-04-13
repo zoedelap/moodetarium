@@ -8,12 +8,30 @@ public class SendDataRequests : MonoBehaviour
 {
     private PlanetManager planetManager;
     private Dictionary<string, float> moodDict;
-    private Dictionary<string, float> countDict;    
+    private Dictionary<string, float> countDict;  
+    private List<string> colleges;  
 
     void Awake()
     {
         planetManager = GameObject.Find("Planets").GetComponent<PlanetManager>();
+        StartCoroutine(GetAvailableColleges());
         InvokeRepeating("getData", 0, 30.0f);
+    }
+
+    IEnumerator GetAvailableColleges()
+    {
+        Debug.Log("Getting available colleges");
+        UnityWebRequest dataReq = UnityWebRequest.Get("https://ineffablezoe.wixsite.com/moodetarium/_functions/collegesWithResponses");
+        yield return dataReq.SendWebRequest();
+        if (dataReq.result == UnityWebRequest.Result.ConnectionError || dataReq.result == UnityWebRequest.Result.ProtocolError) 
+        {
+            Debug.Log("ERROR: " + dataReq.error);
+        } 
+        else 
+        {
+            colleges =   new List<string>(DataHandler.parseResponse(dataReq.downloadHandler.text).Keys);
+            planetManager.createPlanets(colleges);
+        }
     }
 
     void getData() 
