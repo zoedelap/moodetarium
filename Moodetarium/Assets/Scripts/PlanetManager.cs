@@ -31,6 +31,7 @@ public class PlanetManager : MonoBehaviour
     public void setPlanetColors(Dictionary<string, float> moods) {
         foreach (KeyValuePair<string, PlanetAppearanceController> kvp in planetControllers)
         {
+            // try catch handles if a key wasn't provided for one of the planets
             try {
                 Color mappedColor = convertColor(moods[kvp.Key]);
                 kvp.Value.setColor(mappedColor);
@@ -41,10 +42,14 @@ public class PlanetManager : MonoBehaviour
     }
 
     public void setPlanetSizes(Dictionary<string, float> counts) {
+        // sum the values of the counts dictionary
         int totalSubmissions = countTotalSubmissions(counts);
+
         foreach (KeyValuePair<string, PlanetAppearanceController> kvp in planetControllers)
         {
+            // try catch handles if a key wasn't provided for one of the planets
             try {
+                // normalize the scale
                 float scaleValue = counts[kvp.Key] / totalSubmissions;
                 kvp.Value.setSize(scaleValue);
             } catch (KeyNotFoundException e) {
@@ -58,6 +63,7 @@ public class PlanetManager : MonoBehaviour
     }
 
     Color convertColor(float num) {
+        // this implementation isn't great, but it just sorts the mood number into a color
         if (num < 1) {
             return Color.grey;
         } else if (num < 2) {
