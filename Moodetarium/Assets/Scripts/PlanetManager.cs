@@ -5,20 +5,29 @@ using UnityEngine;
 
 public class PlanetManager : MonoBehaviour
 {
-    public GameObject[] planets;
-    private Dictionary<string, PlanetAppearanceController> planetControllers;
+    public GameObject planetPrefab;
+    // public GameObject[] planets;
+    private Dictionary<string, PlanetAppearanceController> planetControllers = new Dictionary<string, PlanetAppearanceController>();
 
     void Start() {
-        planetControllers = new Dictionary<string, PlanetAppearanceController>();
-        foreach (GameObject planet in planets)
-        {
-            PlanetAppearanceController controller = planet.GetComponent<PlanetAppearanceController>();
-            planetControllers.Add(planet.name, controller);
-        }
+        // planetControllers = new Dictionary<string, PlanetAppearanceController>();
+        // foreach (GameObject planet in planets)
+        // {
+        //     PlanetAppearanceController controller = planet.GetComponent<PlanetAppearanceController>();
+        //     planetControllers.Add(planet.name, controller);
+        // }
     }
 
     public void createPlanets(List<string> names) {
-        Debug.Log("would create planets: " + string.Join(",", names));
+        foreach (string name in names)
+        {
+            // create a child element of the gameobject the script is attached to and get the needed references
+            GameObject newPlanet = Instantiate(planetPrefab) as GameObject;
+            newPlanet.transform.parent = gameObject.transform;
+            PlanetAppearanceController newObjController = newPlanet.GetComponent<PlanetAppearanceController>();
+            planetControllers.Add(name, newObjController);
+        }
+        Debug.Log("Created planets: " + string.Join(",", names));
     }
 
     public void setPlanetColors(Dictionary<string, float> moods) {
