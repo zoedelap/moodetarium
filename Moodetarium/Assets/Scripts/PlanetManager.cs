@@ -19,13 +19,17 @@ public class PlanetManager : MonoBehaviour
     }
 
     public void createPlanets(List<string> names) {
+        float i = 3.0f;
         foreach (string name in names)
         {
             // create a child element of the gameobject the script is attached to and get the needed references
             GameObject newPlanet = Instantiate(planetPrefab) as GameObject;
             newPlanet.transform.parent = gameObject.transform;
+            newPlanet.transform.position = new Vector3(i, 0, i);
             PlanetAppearanceController newObjController = newPlanet.GetComponent<PlanetAppearanceController>();
             planetControllers.Add(name, newObjController);
+
+            i++;
         }
         Debug.Log("Created planets: " + string.Join(",", names));
     }
